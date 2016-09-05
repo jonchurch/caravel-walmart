@@ -3,6 +3,8 @@ FROM mysql
 # Copy the database schema to the /data directory
 ADD files/run_db files/init_db files/walmart_schema.sql /tmp/
 
+VOLUME ["/var/lib/mysql"]
+
 # init_db will create the default
 # database from walart_schema.sql, then
 # stop mysqld, and finally copy the /var/lib/mysql directory
